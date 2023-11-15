@@ -1,0 +1,5 @@
+//running the applciation
+flask --app [app_name.py] run
+
+//run with monitoring
+flask --app hello.py run --debug
