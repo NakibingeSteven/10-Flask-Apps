@@ -15,10 +15,35 @@ images = [
     "https://example.com/image5.jpg",
 ]
 
+# Additional dynamic content
+additional_data = {
+    "text_content": "This is some dynamic text content.",
+    "number_of_items": len(items),
+}
+
+
+# Sample dictionary
+sample_dict = {"key1": "value1", "key2": "value2", "key3": "value3"}
+
+# Sample list of dictionaries
+list_of_dicts = [
+    {"name": "John", "age": 30},
+    {"name": "Jane", "age": 25},
+    {"name": "Bob", "age": 35},
+]
+
 
 @app.route("/")
 def home():
-    return render_template("home.html", items=items)
+    # Pass all dynamic data to the template
+    return render_template(
+        "home.html",
+        items=items,
+        images=images,
+        additional_data=additional_data,
+        sample_dict=sample_dict,
+        list_of_dicts=list_of_dicts,
+    )
 
 
 @app.route("/about")
