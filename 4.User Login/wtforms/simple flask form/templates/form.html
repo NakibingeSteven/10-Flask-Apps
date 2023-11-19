@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WTForms Example</title>
+  </head>
+  <body>
+    <h1>WTForms Example</h1>
+    <form method="POST" action="/">
+      <!--Form action is root url-->
+      {{ form.hidden_tag() }}
+
+      <!--name label-->
+      {{ form.name.label }} {{ form.name(size=20) }}
+      <!--This part generates the input field for the 'name' field. The form.name references the 'name' field in the form, and (size=20)-->
+
+      <!--AGE label-->
+      {{ form.age.label }} {{ form.age(size=20) }}
+
+      <!--Submit Button-->
+      {{form.submit() }}
+    </form>
+  </body>
+</html>
