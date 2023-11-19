@@ -1,0 +1,26 @@
+from wtforms import Form, StringField, SubmitField
+
+
+class MyFroms(Form):
+    name = StringField("Name")
+    submit = SubmitField("Submit")
+
+
+def main():
+    form = MyFroms()
+
+    # simulate user inputs
+    form.name.data = "John Doe"
+
+    # accesing form data
+    print(f"Name: {form.name.data}")
+
+    # check if form is valid
+    if form.validate():
+        print("Forms is validated")
+    else:
+        print("Input is not vlaidate")
+
+
+if __name__ == "__main__":
+    main()
